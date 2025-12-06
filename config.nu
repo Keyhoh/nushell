@@ -17,14 +17,6 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
-^ssh-agent -c
-    | lines
-    | first 2
-    | parse "setenv {name} {value};"
-    | transpose -r
-    | into record
-    | load-env
-
 # completions for nixos management command
 def nixos-subCommands [] { ["update", "upgrade", "optimise", "clean"] }
 # nixos management command
