@@ -32,15 +32,8 @@ def nixos [subCommand:string@nixos-subCommands] {
 
 use ~/.config/nushell/share/nu_scripts/aliases/git/git-aliases.nu *
 use ~/.config/nushell/share/nu_scripts/aliases/eza/eza-aliases.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/docker/docker-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/gh/gh-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/git/git-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/nix/nix-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/npm/npm-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/rg/rg-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/ssh/ssh-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/vscode/vscode-completions.nu *
-use ~/.config/nushell/share/nu_scripts/custom-completions/zellij/zellij-completions.nu *
+
+source $"($nu.cache-dir)/carapace.nu"
 
 $env.config.show_banner = false
 

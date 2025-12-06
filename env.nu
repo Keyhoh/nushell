@@ -17,6 +17,7 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
+# ssh-agent
 do --env {
     let ssh_agent_file = (
         $nu.temp-path | path join $"ssh-agent-(whoami).nuon"
@@ -41,4 +42,9 @@ do --env {
     load-env $ssh_agent_env
     $ssh_agent_env | save --force $ssh_agent_file
 }
+
+# carapace
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
