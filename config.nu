@@ -36,6 +36,7 @@ def nixos [subCommand:string@nixos-subCommands] {
 
 use ~/.config/nushell/share/nu_scripts/aliases/git/git-aliases.nu *
 use ~/.config/nushell/share/nu_scripts/aliases/eza/eza-aliases.nu *
+source ~/.config/nushell/aliases.nu
 
 source $"($nu.cache-dir)/carapace.nu"
 
