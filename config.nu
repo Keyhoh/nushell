@@ -17,6 +17,10 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
+$env.config.buffer_editor = "nvim"
+$env.config.completions.algorithm = "fuzzy"
+$env.config.show_banner = false
+
 # completions for nixos management command
 def nixos-subCommands [] { ["update", "upgrade", "optimise", "clean"] }
 # nixos management command
@@ -34,8 +38,6 @@ use ~/.config/nushell/share/nu_scripts/aliases/git/git-aliases.nu *
 use ~/.config/nushell/share/nu_scripts/aliases/eza/eza-aliases.nu *
 
 source $"($nu.cache-dir)/carapace.nu"
-
-$env.config.show_banner = false
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
