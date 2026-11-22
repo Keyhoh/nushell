@@ -1,3 +1,4 @@
 [submodule "share/nu_scripts"]
 	path = share/nu_scripts
 	url = git@github.com:nushell/nu_scripts.git
+	branch = main
